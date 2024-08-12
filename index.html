@@ -1,46 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Flappy Rex</title>
-    <style>
-      body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #70c5ce;
-      }
-      #startButton, #gameSelectContainer, .gameButton {
-        padding: 10px 20px;
-        font-size: 20px;
-        cursor: pointer;
-      }
-      #gameSelectContainer {
-        display: none;
-        margin-top: 20px;
-      }
-      .gameButton {
-        display: block;
-        margin: 10px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <h3>Flappy Rex</h3>
-    
-    <!-- Button to start game selection -->
-    <button id="startButton">Start Game</button>
+<head>
+  <title>Flappy Rex</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('images/bag.png');
+      background-size: cover;
+    }
+    #explanation {
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 18px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      max-width: 400px;
+    }
+    #startButton, #gameSelectContainer, .gameButton {
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    #gameSelectContainer {
+      display: none;
+      margin-top: 20px;
+    }
+    .gameButton {
+      display: block;
+      margin: 10px 0;
+    }
+    /* Optional: Style for the restart button */
+    #restartButton {
+      display: none;
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Flappy Rex</h3>
 
-    <!-- Container for game selection buttons -->
-    <div id="gameSelectContainer">
-      <button id="game1" class="gameButton">Game 1</button>
-      <button id="game2" class="gameButton">Game 2</button>
-    </div>
+  <!-- Επεξήγηση πριν από το κουμπί "Start Game" -->
+  <div id="explanation">
+    Καλώς ήρθατε στο Flappy Rex! Στόχος σας είναι να πετάξετε τον Rex όσο πιο μακριά γίνεται, αποφεύγοντας τα εμπόδια και μαζεύοντας cookies για να αυξήσετε την ταχύτητα του παιχνιδιού. Πατήστε το κουμπί για να ξεκινήσετε!
+  </div>
 
-    <canvas id="canvas" width="288" height="512" style="display:none; border: 1px solid #000;"></canvas>   
-    <script src="flappyBird.js"> </script>
-    <script scr="RunRex.js"></script>
-  </body>
+  <!-- Button to start game selection -->
+  <button id="startButton">Start Game</button>
+
+  <!-- Container for game selection buttons -->
+  <div id="gameSelectContainer">
+    <button id="game1" class="gameButton">Game 1</button>
+    <button id="game2" class="gameButton">Game 2</button>
+  </div>
+
+  <canvas id="canvas" width="300" height="600" style="display:none; border: 1px solid #000;"></canvas>   
+  <button id="restartButton">Restart Game</button>
+
+  <script src="flappyBird.js"></script>
+  <script src="RunRex.js"></script>
+</body>
 </html>
